@@ -1,0 +1,8 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /demo
+ws:
+  server:
+    port: 8083
+    host: localhost

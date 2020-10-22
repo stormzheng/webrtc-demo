@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" href="webjars/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/ekko-lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="webjars/demo-console/index.css">
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/layer/2.3/skin/layer.css">
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <script src="webjars/jquery/dist/jquery.min.js"></script>
+    <script src="webjars/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="webjars/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <script src="webjars/draggabilly/draggabilly.pkgd.min.js"></script>
+    <script src="webjars/webrtc-adapter/release/adapter.js"></script>
+    <script src="webjars/demo-console/index.js"></script>
+
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+    <script src="js/socket.io/socket.io.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <title>WebRTC Demo</title>
+</head>
+
+<body>
+
+<h1>WebRTC Demo</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <label class="control-label" for="name">Name</label>
+            <div class="row">
+                <div class="col-md-6">
+                    <input id="name" name="name" class="form-control" type="text"
+                           onkeydown="if (event.keyCode == 13) register();"/>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a id="register" href="#" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Register
+                    </a>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <label class="control-label" for="peer">Peer</label>
+            <div class="row">
+                <div class="col-md-6">
+                    <input id="peer" name="peer" class="form-control" type="text"
+                           onkeydown="if (event.keyCode == 13) call();">
+                </div>
+                <div class="col-md-6 text-right">
+                    <a id="call" href="#" class="btn btn-success">
+                        <span class="glyphicon glyphicon-play"></span>
+                        Call
+                    </a>
+                    <a id="terminate" href="#" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-stop"></span>
+                        Stop
+                    </a>
+                </div>
+            </div>
+            <br/> <label class="control-label" for="console">Console</label><br>
+            <br>
+            <div id="console" class="democonsole">
+                <ul></ul>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div id="videoBig">
+                <video id="localVideo" autoplay width="640px" height="480px"></video>
+            </div>
+            <div id="videoSmall">
+                <video id="remoteVideo" autoplay width="240px" height="180px"></video>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
